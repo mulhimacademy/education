@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ الحصص الحضورية - أكاديمية ملهم التعليمية</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <style>
+        :root {
+            --primary-1: #6a2df3;
+            --primary-2: #8a5cf5;
+            --primary-3: #a98af7;
+            --secondary-1: #ff8a3c;
+            --secondary-2: #ffb37c;
+            --accent-1: #22b8aa;
+            --accent-2: #5ce0d2;
+            --accent-3: #ff4757;
+            --accent-4: #ff6b81;
+            
+            --gradient-primary: linear-gradient(135deg, #6a2df3 0%, #ff8a3c 50%, #22b8aa 100%);
+            --gradient-secondary: linear-gradient(135deg, #ff8a3c 0%, #ffb37c 100%);
+            --gradient-accent: linear-gradient(135deg, #22b8aa 0%, #5ce0d2 100%);
+            --gradient-dark: linear-gradient(135deg, #15162b 0%, #4b1fad 100%);
+            
+            --bg-light: linear-gradient(135deg, #f7f4ff 0%, #fff0e6 50%, #e6fffc 100%);
+            --bg-white: #ffffff;
+            --text-dark: #15162b;
+            --text-light: #5d6680;
+            
+            --radius-lg: 24px;
+            --radius-md: 16px;
+            --radius-sm: 10px;
+            
+            --shadow-soft: 0 15px 35px rgba(106, 45, 243, 0.08);
+            --shadow-medium: 0 20px 40px rgba(106, 45, 243, 0.15);
+            --shadow-strong: 0 25px 50px rgba(106, 45, 243, 0.25);
+            --shadow-glow: 0 0 30px rgba(106, 45, 243, 0.3);
+            
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.7;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 80%, rgba(106, 45, 243, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255, 138, 60, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 40%, rgba(34, 184, 170, 0.05) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* الهيدر مع تأثيرات خاصة */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            padding: 40px 0 20px;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(106, 45, 243, 0.1) 0%, transparent 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            z-index: -1;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 30px;
+            text-decoration: none;
+            position: relative;
+            padding: 20px;
+            border-radius: var(--radius-lg);
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(106, 45, 243, 0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .logo-img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-glow);
+            padding: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-img::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: conic-gradient(transparent, transparent, transparent, var(--primary-1));
+            animation: rotate 4s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .logo-img img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: contain;
+            background: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-text {
+            text-align: right;
+        }
+
+        .logo-text h1 {
+            font-size: 2.8rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            font-weight: 900;
+            position: relative;
+            display: inline-block;
+        }
+
+        .logo-text h1::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        .logo-text p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            font-weight: 600;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .week-badge {
+            display: inline-block;
+            background: var(--gradient-secondary);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 900;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            box-shadow: 0 10px 30px rgba(255, 138, 60, 0.4);
+            position: relative;
+            overflow: hidden;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 10px 30px rgba(255, 138, 60, 0.4); }
+            50% { box-shadow: 0 15px 40px rgba(255, 138, 60, 0.6); }
+        }
+
+        .week-badge::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, 
+                transparent 25%, 
+                rgba(255, 255, 255, 0.2) 50%, 
+                transparent 75%);
+            animation: shine 3s infinite linear;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .dates-badge {
+            display: inline-block;
+            margin-top: 20px;
+            background: rgba(106, 45, 243, 0.15);
+            color: var(--text-dark);
+            padding: 12px 30px;
+            border-radius: 999px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+            background: linear-gradient(white, white) padding-box,
+                        var(--gradient-primary) border-box;
+            animation: borderRotate 3s linear infinite;
+        }
+
+        @keyframes borderRotate {
+            0% { background: linear-gradient(white, white) padding-box,
+                           linear-gradient(0deg, var(--primary-1), var(--secondary-1)) border-box; }
+            50% { background: linear-gradient(white, white) padding-box,
+                           linear-gradient(180deg, var(--primary-1), var(--secondary-1)) border-box; }
+            100% { background: linear-gradient(white, white) padding-box,
+                           linear-gradient(360deg, var(--primary-1), var(--secondary-1)) border-box; }
+        }
+
+        /* البطاقة الرئيسية */
+        .hero-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: var(--radius-lg);
+            padding: 50px;
+            box-shadow: var(--shadow-medium);
+            margin-bottom: 50px;
+            border: 1px solid rgba(106, 45, 243, 0.1);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: var(--gradient-primary);
+            opacity: 0.05;
+            transform: rotate(45deg);
+            z-index: -1;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-weight: 900;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+            transform: scaleX(0);
+            transform-origin: right;
+            animation: lineExpand 1s ease-out 0.5s forwards;
+        }
+
+        @keyframes lineExpand {
+            to { transform: scaleX(1); }
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px 25px;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+            border: 1px solid transparent;
+            background-clip: padding-box;
+            background: linear-gradient(white, white) padding-box,
+                        var(--gradient-primary) border-box;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .feature i {
+            font-size: 1.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 18px 40px;
+            border-radius: var(--radius-md);
+            border: none;
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.2) 50%, transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            transform: translateX(100%);
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: 0 10px 30px rgba(106, 45, 243, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(106, 45, 243, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary-1);
+            border: 2px solid var(--primary-1);
+            box-shadow: 0 10px 30px rgba(106, 45, 243, 0.1);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-1);
+            color: white;
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(106, 45, 243, 0.2);
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(37, 211, 102, 0.4);
+        }
+
+        /* العروض مع تأثيرات */
+        .offers-section {
+            margin: 60px 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--text-dark);
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: 900;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            right: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-primary);
+            border-radius: 3px;
+            transform: scaleX(0);
+            transform-origin: right;
+            animation: lineExpand 1s ease-out 0.3s forwards;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+        }
+
+        .offers-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .offer-box {
+            position: relative;
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 35px 30px;
+            border: 2px solid transparent;
+            transition: var(--transition);
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+            overflow: hidden;
+        }
+        
+        .offer-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-primary);
+        }
+        
+        .offer-box:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .offer-box.best {
+            border: 2px solid var(--primary-1);
+            background: linear-gradient(135deg, rgba(106, 45, 243, 0.05), rgba(255, 138, 60, 0.05));
+        }
+        
+        .offer-box.normal {
+            border: 2px solid var(--accent-1);
+            background: linear-gradient(135deg, rgba(34, 184, 170, 0.05), rgba(106, 45, 243, 0.05));
+        }
+        
+        .offer-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient-secondary);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 900;
+            box-shadow: 0 5px 20px rgba(255, 138, 60, 0.4);
+            z-index: 2;
+        }
+        
+        .offer-title {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+        
+        .price-large {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary-1);
+            margin: 20px 0;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .price-large::after {
+            content: 'ريال';
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-right: 5px;
+        }
+        
+        .price-small {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            text-decoration: line-through;
+        }
+        
+        .savings-badge {
+            background: var(--gradient-accent);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 1rem;
+            display: inline-block;
+            margin-top: 15px;
+            font-weight: 800;
+            box-shadow: 0 5px 15px rgba(34, 184, 170, 0.3);
+        }
+
+        /* الحصص مع تأثيرات */
+        .classes-section {
+            margin: 70px 0;
+            position: relative;
+        }
+
+        .day-title {
+            color: var(--primary-1);
+            margin: 40px 0 25px;
+            border-right: 6px solid;
+            border-image: var(--gradient-primary) 1;
+            padding-right: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 900;
+            font-size: 1.8rem;
+            position: relative;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px 25px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .classes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .class-item {
+            background: white;
+            border: 2px solid transparent;
+            border-radius: var(--radius-lg);
+            transition: var(--transition);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .class-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 1;
+        }
+
+        .class-item:hover::before {
+            opacity: 0.05;
+        }
+
+        .class-item:hover {
+            border-color: var(--primary-1);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .class-media {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .class-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transform: scale(1.05);
+            transition: var(--transition);
+        }
+
+        .class-item:hover .class-media img {
+            transform: scale(1.1);
+        }
+
+        .class-media-badge {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background: rgba(0,0,0,0.8);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            backdrop-filter: blur(5px);
+            z-index: 2;
+        }
+
+        .class-body {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            flex: 1;
+            position: relative;
+            z-index: 2;
+        }
+
+        .class-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .class-title {
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            font-weight: 900;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .class-price {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--primary-1);
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .class-price::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        .class-teacher {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            font-weight: 700;
+            margin-top: 5px;
+        }
+
+        .teacher-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid transparent;
+            background: linear-gradient(white, white) padding-box,
+                        var(--gradient-primary) border-box;
+        }
+
+        .class-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .class-chip {
+            background: rgba(106,45,243,0.1);
+            color: var(--primary-1);
+            padding: 6px 15px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+
+        .class-chip:hover {
+            background: rgba(106,45,243,0.2);
+            transform: translateY(-2px);
+        }
+
+        .class-chip i {
+            font-size: 0.9rem;
+        }
+
+        .class-content {
+            margin-top: 15px;
+            font-size: 1rem;
+            color: #6b7280;
+            line-height: 1.6;
+            padding: 15px;
+            background: rgba(106,45,243,0.03);
+            border-radius: var(--radius-md);
+            border-right: 3px solid var(--primary-1);
+        }
+
+        /* قسم المعلمين */
+        .teachers-section {
+            margin: 80px 0;
+            background: linear-gradient(135deg, rgba(106, 45, 243, 0.05), rgba(255, 138, 60, 0.05));
+            padding: 60px 40px;
+            border-radius: var(--radius-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .teachers-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(106,45,243,0.1) 0%, transparent 70%);
+            transform: rotate(30deg);
+            z-index: -1;
+        }
+
+        .teachers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .teacher-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .teacher-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-primary);
+        }
+
+        .teacher-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .teacher-avatar-lg {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid transparent;
+            background: linear-gradient(white, white) padding-box,
+                        var(--gradient-primary) border-box;
+            margin: 0 auto 20px;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .teacher-card:hover .teacher-avatar-lg {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .teacher-name {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .teacher-subject {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 700;
+            padding: 5px 15px;
+            background: rgba(106,45,243,0.1);
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        /* موقع الأكاديمية */
+        .location-section {
+            margin: 70px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .location-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            box-shadow: var(--shadow-medium);
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            background: linear-gradient(white, white) padding-box,
+                        var(--gradient-primary) border-box;
+        }
+
+        .location-title {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-weight: 900;
+        }
+
+        .location-address {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .map-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: var(--gradient-accent);
+            color: white;
+            padding: 15px 35px;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-weight: 900;
+            transition: var(--transition);
+            box-shadow: 0 10px 30px rgba(34, 184, 170, 0.3);
+        }
+
+        .map-link:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(34, 184, 170, 0.4);
+        }
+
+        /* فوتر التسجيل */
+        .registration-footer {
+            background: var(--gradient-dark);
+            color: white;
+            padding: 70px 40px;
+            text-align: center;
+            border-radius: var(--radius-lg);
+            margin: 80px 0 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .registration-footer::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        .registration-footer h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 900;
+            position: relative;
+            z-index: 2;
+        }
+
+        .registration-footer p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 2;
+            opacity: 0.9;
+        }
+
+        /* الفوتر */
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid rgba(106, 45, 243, 0.1);
+            color: var(--text-light);
+            font-size: 1rem;
+            position: relative;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(106, 45, 243, 0.08);
+            padding: 15px 30px;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            transition: var(--transition);
+            border: 1px solid transparent;
+            background-clip: padding-box;
+            background: linear-gradient(white, white) padding-box,
+                        var(--gradient-primary) border-box;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .contact-item i {
+            font-size: 1.2rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* النجوم المتحركة */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle var(--duration) infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.2; transform: scale(1); }
+            100% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* التجاوبية */
+        @media (max-width: 1024px) {
+            .classes-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .logo {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px;
+            }
+            
+            .logo-text h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .offers-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .classes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .teachers-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .teachers-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .feature {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-card {
+                padding: 30px 20px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- النجوم المتحركة -->
+    <div class="stars" id="stars"></div>
+
+    <div class="container">
+        <!-- الهيدر -->
+        <div class="header">
+            <div class="logo">
+                <div class="logo-img">
+                    <img src="https://h.top4top.io/p_3622qldhs1.png" alt="شعار أكاديمية ملهم">
+                </div>
+                <div class="logo-text">
+                    <h1>أكاديمية ملهم التعليمية</h1>
+                    <p>الحصص الحضورية المميزة - استعداد مثالي للاختبارات</p>
+                    <div class="week-badge">
+                        <i class="fas fa-bolt"></i> حصص هذا الأسبوع فقط
+                    </div>
+                    <div class="dates-badge">
+                        <i class="fas fa-calendar-star"></i> الجمعة 12 ديسمبر &nbsp; ✨ &nbsp; السبت 13 ديسمبر
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- البطاقة الرئيسية -->
+        <div class="hero-card animate__animated animate__fadeInUp">
+            <h2 class="hero-title">🎯 استعد للاختبارات بثقة مع حصصنا الحضورية</h2>
+            <p class="hero-subtitle">
+                احجز مقعدك الآن في الحصص الحضورية التفاعلية مع نخبة من المعلمين المتخصصين. 
+                مراجعة شاملة، تدريب عملي على النماذج الامتحانية، وشرح مبسط للمفاهيم الصعبة 
+                في جو تعليمي محفز وإيجابي.
+            </p>
+            
+            <div class="hero-features">
+                <div class="feature animate__animated animate__fadeInLeft">
+                    <i class="fas fa-star"></i>
+                    <span>معلمون متخصصون ذوو خبرة</span>
+                </div>
+                <div class="feature animate__animated animate__fadeInUp">
+                    <i class="fas fa-users"></i>
+                    <span>مجموعات صغيرة للتركيز الأمثل</span>
+                </div>
+                <div class="feature animate__animated animate__fadeInRight">
+                    <i class="fas fa-chart-line"></i>
+                    <span>تحسين الدرجات مضمون</span>
+                </div>
+            </div>
+            
+            <div class="cta-buttons">
+                <a href="#classes" class="btn btn-primary animate__animated animate__pulse animate__infinite">
+                    <i class="fas fa-rocket"></i> اكتشف الحصص المتاحة
+                </a>
+                <a href="https://mulhimacademy.github.io/registration/" class="btn btn-secondary" target="_blank">
+                    <i class="fas fa-user-graduate"></i> سجل الآن واحصل على خصم
+                </a>
+                <a href="https://wa.me/96874120010" class="btn btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> تواصل للحجز المباشر
+                </a>
+            </div>
+        </div>
+
+        <!-- العروض -->
+        <div class="offers-section">
+            <h2 class="section-title animate__animated animate__fadeInDown">🎁 عروض وتخفيضات استثنائية</h2>
+            <p class="section-subtitle animate__animated animate__fadeInUp">
+                كلما سجلت في عدد أكبر من الحصص، كلما حصلت على خصم أكبر!
+            </p>
+            
+            <div class="offers-container">
+                <div class="offer-box best animate__animated animate__fadeInLeft">
+                    <div class="offer-badge">⭐ الأكثر توفيراً</div>
+                    <div class="offer-title">باقة ٦ حصص ذهبية</div>
+                    <div class="price-large">20</div>
+                    <div class="price-small">بدلاً من 30 ريال</div>
+                    <div class="savings-badge">🎯 توفير 10 ريالات</div>
+                    <p style="margin-top:20px; font-size:1rem; color:var(--text-light);">
+                        مثالية للطالب الذي يريد الاستفادة القصوى من جميع المواد المتاحة.
+                    </p>
+                </div>
+
+                <div class="offer-box normal animate__animated animate__fadeInUp">
+                    <div class="offer-title">باقة ٥ حصص متميزة</div>
+                    <div class="price-large">18</div>
+                    <div class="price-small">بدلاً من 25 ريال</div>
+                    <div class="savings-badge">✨ توفير 7 ريالات</div>
+                    <p style="margin-top:20px; font-size:1rem; color:var(--text-light);">
+                        اختيار مرن لعدة مواد مع توفير ممتاز وجدول متوازن.
+                    </p>
+                </div>
+
+                <div class="offer-box normal animate__animated animate__fadeInRight">
+                    <div class="offer-title">عروض مرنة</div>
+                    <div style="text-align: right; padding: 20px 0;">
+                        <p style="font-size:1.2rem; margin:15px 0; color:var(--text-dark); font-weight:700;">
+                            <i class="fas fa-check-circle" style="color:var(--accent-1);"></i>
+                            ٤ حصص = 15 ريال
+                            <span style="color:var(--text-light); font-size:1rem; text-decoration:line-through; margin-right:10px;">20 ريال</span>
+                        </p>
+                        <p style="font-size:1.2rem; margin:15px 0; color:var(--text-dark); font-weight:700;">
+                            <i class="fas fa-check-circle" style="color:var(--accent-1);"></i>
+                            ٣ حصص = 12 ريال
+                            <span style="color:var(--text-light); font-size:1rem; text-decoration:line-through; margin-right:10px;">15 ريال</span>
+                        </p>
+                        <p style="font-size:1.2rem; margin:15px 0; color:var(--text-dark); font-weight:700;">
+                            <i class="fas fa-check-circle" style="color:var(--accent-1);"></i>
+                            حصتان = 8 ريال
+                            <span style="color:var(--text-light); font-size:1rem; text-decoration:line-through; margin-right:10px;">10 ريال</span>
+                        </p>
+                    </div>
+                    <div class="savings-badge">⚡ حساب تلقائي للخصم</div>
+                </div>
+            </div>
+            
+            <p style="text-align: center; color: var(--primary-1); font-weight: 900; margin-top: 30px; font-size: 1.3rem;">
+                <i class="fas fa-gem"></i> سعر الحصة المفردة: 5 ريالات فقط
+            </p>
+        </div>
+
+        <!-- الحصص -->
+        <div class="classes-section" id="classes">
+            <h2 class="section-title animate__animated animate__fadeInDown">📅 الحصص الحضورية المتاحة هذا الأسبوع</h2>
+            <p class="section-subtitle animate__animated animate__fadeInUp">
+                اختر من الحصص التالية التي تناسب مستواك الدراسي وجدولك الزمني
+            </p>
+
+            <!-- حصص الجمعة -->
+            <h3 class="day-title animate__animated animate__fadeInLeft">
+                <i class="fas fa-sun"></i> يوم الجمعة - 12 ديسمبر
+            </h3>
+            
+            <div class="classes-grid" id="fridayClasses">
+                <!-- سيتم تعبئته بواسطة JavaScript -->
+            </div>
+
+            <!-- حصص السبت -->
+            <h3 class="day-title animate__animated animate__fadeInRight" style="margin-top: 60px;">
+                <i class="fas fa-moon"></i> يوم السبت - 13 ديسمبر
+            </h3>
+            
+            <div class="classes-grid" id="saturdayClasses">
+                <!-- سيتم تعبئته بواسطة JavaScript -->
+            </div>
+        </div>
+
+        <!-- قسم المعلمين -->
+        <div class="teachers-section">
+            <h2 class="section-title animate__animated animate__fadeInDown">👑 فريق المعلمين الأكفاء</h2>
+            <p class="section-subtitle animate__animated animate__fadeInUp">
+                نقدم لكم نخبة من المعلمين المؤهلين بخبرة واسعة في تدريس المواد العلمية
+            </p>
+            
+            <div class="teachers-grid" id="teachersContainer">
+                <!-- سيتم تعبئته بواسطة JavaScript -->
+            </div>
+        </div>
+
+        <!-- موقع الأكاديمية -->
+        <div class="location-section">
+            <h2 class="section-title animate__animated animate__fadeInDown">📍 موقع الأكاديمية</h2>
+            <div class="location-card animate__animated animate__fadeInUp">
+                <h3 class="location-title">أكاديمية ملهم التعليمية</h3>
+                <p class="location-address">
+                    <i class="fas fa-map-marker-alt" style="color:var(--accent-1);"></i> 
+                    عبري - الدريز، ولاية عبري، سلطنة عُمان
+                </p>
+                <a href="https://maps.app.goo.gl/uznL5JFVHPDL2cyJ8?g_st=ipc" class="map-link" target="_blank">
+                    <i class="fas fa-map-marked-alt"></i> افتح الخريطة على Google Maps
+                </a>
+            </div>
+        </div>
+
+        <!-- فوتر التسجيل -->
+        <div class="registration-footer">
+            <h2 class="animate__animated animate__pulse animate__infinite">🚀 انطلق نحو التفوق الدراسي!</h2>
+            <p class="animate__animated animate__fadeIn">
+                لا تفوت فرصة التحضير المثالي للاختبارات النهائية مع معلمين متخصصين في جو تعليمي تفاعلي. 
+                المقاعد محدودة، سجل الآن لضمان حصولك على أفضل استعداد للاختبارات وارتقِ بمستواك التعليمي.
+            </p>
+            <div class="cta-buttons">
+                <a href="https://mulhimacademy.github.io/registration/" class="btn btn-primary" style="background: white; color: var(--text-dark);" target="_blank">
+                    <i class="fas fa-crown"></i> سجل الآن واحصل على خصم خاص
+                </a>
+                <a href="https://wa.me/96874120010" class="btn" style="background: rgba(255,255,255,0.2); color: white; border: 2px solid white;" target="_blank">
+                    <i class="fab fa-whatsapp"></i> تواصل معنا للاستفسار
+                </a>
+            </div>
+        </div>
+
+        <!-- الفوتر -->
+        <div class="footer">
+            <p style="font-size: 1.2rem; font-weight: 700; color: var(--primary-1); margin-bottom: 10px;">
+                أكاديمية ملهم التعليمية - رفيقك نحو التفوق
+            </p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>هاتف الأكاديمية: 74120010</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <span>رقم التحويل: 92147179</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <span>ساعات العمل: 8 صباحاً - 10 مساءً</span>
+                </div>
+            </div>
+            <p style="margin-top: 30px; font-size: 1rem; color: var(--text-light);">
+                نظام التسجيل الإلكتروني للحصص الحضورية - المنصة التسويقية المتألقة
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // بيانات المعلمين
+        const TEACHER_IMAGES = {
+            "محمد المزروعي": "https://l.top4top.io/p_3629amzq27.jpeg",
+            "أحمد المعمري": "https://d.top4top.io/p_3630vvr721.jpeg",
+            "درويش الغافري": "https://g.top4top.io/p_36298w5k72.jpeg",
+            "بدر العبري": "https://h.top4top.io/p_3629jyv2s3.jpeg",
+            "خليفة المعمري": "https://i.top4top.io/p_3629deyyc4.jpeg",
+            "عمر الغافري": "https://k.top4top.io/p_3629bqmrj6.jpeg",
+            "سعيد الكلباني": "https://k.top4top.io/p_3630mnul21.jpeg",
+            "إبراهيم المقبالي": "https://l.top4top.io/p_36308p4nv1.jpeg",
+            "محمود الغافري": "https://l.top4top.io/p_3630y7a5l1.jpeg",
+            "خالد الكلباني": "https://j.top4top.io/p_3630olt6l1.jpeg",
+            "خليل الكلباني": "https://a.top4top.io/p_3630g0hbr1.jpeg"
+        };
+
+        // بيانات الحصص
+        const CLASSES = [
+            {
+                "id": "class_1",
+                "teacher": "سعيد الكلباني",
+                "day": "الجمعة",
+                "time": "9:00 - 10:30 ص",
+                "stage": "الصف الحادي عشر",
+                "subject": "الرياضيات المتقدمة",
+                "content": "مراجعة على الاختبار النهائي التركيز على الوحدتين الأولى والثانية",
+                "price": 5
+            },
+            {
+                "id": "class_2",
+                "teacher": "أحمد المعمري",
+                "day": "الجمعة",
+                "time": "4:00 - 5:30 م",
+                "stage": "الصف الثاني عشر",
+                "subject": "الكيمياء",
+                "content": "مراجعة على الوحدة 1 (شرح وتدريب على أفكار امتحانات نهاية الفصل الدراسي الأول من واقع نماذج اختبارات سابقة)",
+                "price": 5
+            },
+            {
+                "id": "class_3",
+                "teacher": "أحمد المعمري",
+                "day": "الجمعة",
+                "time": "6:00 - 7:30 م",
+                "stage": "الصف الثاني عشر",
+                "subject": "الكيمياء",
+                "content": "مراجعة عامة للوحدة الرابعة تتضمن مناقشة أفكار الوحدة وعرض مخططات التفاعلات العضوية وحل أسئلة نهاية الوحدة",
+                "price": 5
+            },
+            {
+                "id": "class_4",
+                "teacher": "إبراهيم المقبالي",
+                "day": "الجمعة",
+                "time": "6:00 - 7:30 م",
+                "stage": "الصف العاشر",
+                "subject": "الفيزياء",
+                "content": "مراجعة شاملة للامتحان النهائي في الفصل الدراسي الأول (تدريبات مكثفة والتعامل مع أسئلة الامتحانات السابقة)",
+                "price": 5
+            },
+            {
+                "id": "class_5",
+                "teacher": "خليفة المعمري",
+                "day": "الجمعة",
+                "time": "8:00 - 9:30 م",
+                "stage": "الصف الثاني عشر",
+                "subject": "الكيمياء",
+                "content": "مراجعة عامة على الوحدة الأولى (حل أسئلة متنوعة ونماذج امتحانات نهائية)",
+                "price": 5
+            },
+            {
+                "id": "class_6",
+                "teacher": "محمود الغافري",
+                "day": "الجمعة",
+                "time": "8:00 - 9:30 م",
+                "stage": "الصف الخامس",
+                "subject": "اللغة العربية",
+                "content": "مراجعة على الاختبار النهائي التركيز على الوحدتين الأولى والثانية",
+                "price": 5
+            },
+            {
+                "id": "class_7",
+                "teacher": "إبراهيم المقبالي",
+                "day": "الجمعة",
+                "time": "8:00 - 9:30 م",
+                "stage": "الصف التاسع",
+                "subject": "فيزياء",
+                "content": "تبسيط القوانين والمسائل المعقدة بطريقة سلسلة وواضحة - حل نماذج وأسئلة امتحانية متوقعة",
+                "price": 5
+            },
+            {
+                "id": "class_8",
+                "teacher": "محمد المزروعي",
+                "day": "السبت",
+                "time": "9:00 - 10:30 ص",
+                "stage": "الصف العاشر",
+                "subject": "الرياضيات",
+                "content": "التدريب على تمارين من اختبارات نهائية سابقة في الوحدات 1,2,3 (مع التركيز على مهارات الحل المنظمة وكتابة خطوات الحل)",
+                "price": 5
+            },
+            {
+                "id": "class_9",
+                "teacher": "عمر الغافري",
+                "day": "السبت",
+                "time": "9:00 - 10:30 ص",
+                "stage": "الصف الثامن",
+                "subject": "الرياضيات",
+                "content": "مراجعة على الوحدات 1,2,3 من خلال حل نماذج امتحانات وأسئلة متنوعة (مع التركيز على مهارات الحل المنظمة وكتابة خطوات الحل)",
+                "price": 5
+            },
+            {
+                "id": "class_10",
+                "teacher": "بدر العبري",
+                "day": "السبت",
+                "time": "11:00 - 12:30 ص",
+                "stage": "الصف الثاني عشر",
+                "subject": "فيزياء",
+                "content": "مراجعة شاملة للوحدة الثانية (المجالات الكهربائية وقانون كولوم)",
+                "price": 5
+            },
+            {
+                "id": "class_11",
+                "teacher": "خالد الكلباني",
+                "day": "السبت",
+                "time": "6:00 - 7:30 م",
+                "stage": "الصف الثاني عشر",
+                "subject": "الرياضيات المتقدمة",
+                "content": "مراجعة شاملة للوحدة الرابعة وحدة التفاضل بأسلوب شيق سيتم عرض أسئلة اختيار من متعدد وأسئلة مقالية على الوحدة",
+                "price": 5
+            },
+            {
+                "id": "class_12",
+                "teacher": "درويش الغافري",
+                "day": "السبت",
+                "time": "6:00 - 7:30 م",
+                "stage": "الصف السادس",
+                "subject": "الرياضيات",
+                "content": "التدرب على كيفية التعامل مع المفردات الامتحانية بطرق واستراتيجيات حديثة ومبتكرة",
+                "price": 5
+            },
+            {
+                "id": "class_13",
+                "teacher": "خليل الكلباني",
+                "day": "السبت",
+                "time": "6:00 - 7:30 م",
+                "stage": "الصف الثامن",
+                "subject": "اللغة العربية",
+                "content": "مراجعة نهائية للاختبار النهائي، طريقة الحل الأسهل للأسئلة الاختبارية، طرق بسيطة وماتعة للوصول للإجابات",
+                "price": 5
+            }
+        ];
+
+        // إنشاء النجوم المتحركة
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const starCount = 100;
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                
+                // أحجام عشوائية
+                const size = Math.random() * 3 + 1;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                
+                // مواقع عشوائية
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                
+                // شفافية عشوائية
+                star.style.opacity = Math.random() * 0.5 + 0.2;
+                
+                // مدة ومدة تأخير عشوائية للوميض
+                star.style.setProperty('--duration', `${Math.random() * 3 + 2}s`);
+                star.style.animationDelay = `${Math.random() * 5}s`;
+                
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // عرض الحصص
+        function renderClasses() {
+            const fridayContainer = document.getElementById('fridayClasses');
+            const saturdayContainer = document.getElementById('saturdayClasses');
+            
+            fridayContainer.innerHTML = '';
+            saturdayContainer.innerHTML = '';
+            
+            // فرز الحصص حسب الوقت
+            const sortedClasses = [...CLASSES].sort((a, b) => {
+                const timeA = a.time.split(' - ')[0];
+                const timeB = b.time.split(' - ')[0];
+                return timeA.localeCompare(timeB);
+            });
+            
+            sortedClasses.forEach((cls, index) => {
+                const teacherImg = TEACHER_IMAGES[cls.teacher] || 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop';
+                
+                const classCard = document.createElement('div');
+                classCard.className = 'class-item';
+                classCard.style.animationDelay = `${index * 0.1}s`;
+                classCard.classList.add('animate__animated', 'animate__fadeInUp');
+                
+                classCard.innerHTML = `
+                    <div class="class-media">
+                        <img src="${teacherImg}" alt="${cls.teacher}" loading="lazy">
+                        <div class="class-media-badge">
+                            <i class="fas fa-clock"></i> ${cls.time}
+                        </div>
+                    </div>
+                    <div class="class-body">
+                        <div class="class-header">
+                            <div>
+                                <div class="class-title">${cls.subject}</div>
+                                <div class="class-teacher">
+                                    <img src="${teacherImg}" class="teacher-avatar" alt="${cls.teacher}" loading="lazy">
+                                    ${cls.teacher}
+                                </div>
+                            </div>
+                            <div class="class-price">${cls.price} ريال</div>
+                        </div>
+                        <div class="class-meta">
+                            <span class="class-chip">
+                                <i class="fas fa-graduation-cap"></i>
+                                ${cls.stage}
+                            </span>
+                            <span class="class-chip">
+                                <i class="fas fa-map-marker-alt"></i>
+                                حضوري
+                            </span>
+                            <span class="class-chip">
+                                <i class="fas fa-calendar-day"></i>
+                                ${cls.day}
+                            </span>
+                        </div>
+                        <div class="class-content">
+                            <i class="fas fa-lightbulb" style="color: var(--secondary-1); margin-left: 5px;"></i>
+                            ${cls.content}
+                        </div>
+                    </div>
+                `;
+                
+                classCard.addEventListener('click', () => {
+                    window.open('https://mulhimacademy.github.io/registration/', '_blank');
+                });
+                
+                if (cls.day === 'الجمعة') {
+                    fridayContainer.appendChild(classCard);
+                } else if (cls.day === 'السبت') {
+                    saturdayContainer.appendChild(classCard);
+                }
+            });
+        }
+
+        // عرض المعلمين
+        function renderTeachers() {
+            const container = document.getElementById('teachersContainer');
+            container.innerHTML = '';
+            
+            // استخراج قائمة فريدة من المعلمين
+            const uniqueTeachers = {};
+            CLASSES.forEach(cls => {
+                if (!uniqueTeachers[cls.teacher]) {
+                    uniqueTeachers[cls.teacher] = {
+                        name: cls.teacher,
+                        image: TEACHER_IMAGES[cls.teacher] || 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
+                        subjects: new Set()
+                    };
+                }
+                uniqueTeachers[cls.teacher].subjects.add(cls.subject);
+            });
+            
+            // تحويل إلى مصفوفة وعرضها
+            Object.values(uniqueTeachers).forEach((teacher, index) => {
+                const teacherCard = document.createElement('div');
+                teacherCard.className = 'teacher-card';
+                teacherCard.style.animationDelay = `${index * 0.1}s`;
+                teacherCard.classList.add('animate__animated', 'animate__fadeInUp');
+                
+                teacherCard.innerHTML = `
+                    <img src="${teacher.image}" class="teacher-avatar-lg" alt="${teacher.name}" loading="lazy">
+                    <div class="teacher-name">${teacher.name}</div>
+                    <div class="teacher-subject">${Array.from(teacher.subjects).slice(0, 2).join('، ')}</div>
+                `;
+                container.appendChild(teacherCard);
+            });
+        }
+
+        // إضافة تأثيرات عند التمرير
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // مراقبة العناصر
+            document.querySelectorAll('.class-item, .offer-box, .teacher-card, .feature').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // تهيئة الصفحة
+        document.addEventListener('DOMContentLoaded', () => {
+            createStars();
+            renderClasses();
+            renderTeachers();
+            initScrollAnimations();
+            
+            // تأثيرات إضافية
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(btn => {
+                btn.addEventListener('mouseenter', function() {
+                    this.classList.add('animate__pulse');
+                });
+                
+                btn.addEventListener('mouseleave', function() {
+                    this.classList.remove('animate__pulse');
+                });
+            });
+            
+            // تنبيه في الكونسول
+            console.log('%c🎓 أكاديمية ملهم التعليمية 🎓', 'font-size: 24px; color: #6a2df3; font-weight: bold;');
+            console.log('%cمنصة تسويقية متألقة للحصص الحضورية', 'font-size: 18px; color: #ff8a3c;');
+            console.log('%cرابط التسجيل: https://mulhimacademy.github.io/registration/', 'font-size: 16px; color: #22b8aa;');
+        });
+    </script>
+</body>
+</html>
